@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../includes/head.ejs") %>
+  <body>
+    <%- include("../includes/header.ejs") %>
+    <main
+      class="flex flex-col gap-10 items-center justify-center max-w-[1440px] mx-auto py-10 px-10"
+    >
+      <h1 class="text-4xl font-bold">Users</h1>
+      <a href="/users/register">
+        <button class="bg-violet-900 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded">Register</button>
+      </a>
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+          <tr>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">ID</th>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</th>
+            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <% users.forEach((user) => { %>
+            <tr>
+              <td class="px-6 py-4 whitespace-no-wrap"><%= user.id %></td>
+              <td class="px-6 py-4 whitespace-no-wrap"><%= user.name %></td>
+              <td class="px-6 py-4 whitespace-no-wrap"><%= user.email %></td>
+              <td class="px-6 py-4 whitespace-no-wrap flex gap-2">
+                <a href="/users/edit/<%- user.id %>">
+                  <button class="bg-violet-900 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                </a>
+                <form action="/users/delete/<%- user.id %>" method="POST" class="inline">
+                    <button type="submit" class="bg-violet-900 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                  </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

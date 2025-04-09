@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "rdx49yzud3",
+      "name": "JulienTT",
+      "email": "julien@t.fr",
+      "password": "$argon2id$v=19$m=4096,t=3,p=1$SapbRoGPAzPWNWo45QX2ug$T6s4PMpWK7TW7tBZ3JVTqJxVENnyRx+N2tuP0SHtYmM"
+    },
+    {
+      "id": "4kb8pez84t",
+      "name": "Thawban",
+      "email": "thaw@ban.fr",
+      "password": "$argon2id$v=19$m=4096,t=3,p=1$4oDm3IbseEOpBuC+D7tZcA$zx5RJWHPwD10XcqKuGO8P84qLPie2Eb/hICt2lfjnow"
+    }
+  ]
+}
