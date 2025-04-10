@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../includes/head.ejs") %>
+  <body>
+    <%- include("../includes/header.ejs") %>
+    <main
+      class="flex flex-col gap-10 items-center justify-center max-w-[1440px] mx-auto py-10 px-10"
+    >
+      <h1 class="text-4xl font-bold mb-10">Add Whisper</h1>
+      <form
+        action="/whispers/new/add"
+        method="post"
+        class="flex flex-col items-center gap-4"
+      >
+        <label for="name" class="text-gray-800">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:ring-violet-500"
+          style="min-width: 200px"
+        />
+        <label for="message" class="text-gray-800">Whisper</label>
+        <textarea
+          name="message"
+          id="message"
+          required
+          class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:ring-violet-500"
+          style="min-width: 200px"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-violet-900 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-violet-500"
+          style="min-width: 200px"
+        >
+          Whisp it!
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

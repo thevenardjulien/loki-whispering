@@ -2,10 +2,13 @@ import express from "express";
 import { dirname, sep } from "path";
 import { fileURLToPath } from "url";
 import process from "process";
-
-// Import des routeurs
+import { createRequire } from "module";
+import { verifToken } from "./middlewares/verifToken.js";
 import userRoute from "./routes/usersRoute.js";
+import whisperRoute from "./routes/whispersRoute.js";
 
+const require = createRequire(import.meta.url);
+const bdd = require("./bdd.json");
 const app = express();
 export const __dirname = dirname(fileURLToPath(import.meta.url)) + sep;
 
@@ -34,22 +37,31 @@ app.use((req, res, next) => {
 
 // Configuration EJS
 app.set("view engine", "ejs");
-app.set("views", cfg.dir.views);
+app.use(express.urlencoded({ extended: true }));
+
+// Verif token
+app.use(verifToken);
 
 // Routes
 app.get("/", (req, res) => {
+  const whispers = bdd.whispers;
   res.render("index", {
     title: "Whispering",
+    whispers,
   });
 });
 
 app.get("/about", (req, res) => {
+  const whispers = bdd.whispers;
+  const whispersCount = whispers.length;
   res.render("about", {
     title: "About",
+    whispersCount,
   });
 });
 
 app.use("/users", userRoute);
+app.use("/whispers", whisperRoute);
 
 // Gestion des erreurs
 app.use((req, res) => {

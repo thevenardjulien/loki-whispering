@@ -11,6 +11,35 @@
       "name": "Thawban",
       "email": "thaw@ban.fr",
       "password": "$argon2id$v=19$m=4096,t=3,p=1$4oDm3IbseEOpBuC+D7tZcA$zx5RJWHPwD10XcqKuGO8P84qLPie2Eb/hICt2lfjnow"
+    },
+    {
+      "id": "fx2kuslls55",
+      "name": "test",
+      "email": "test@test.fr",
+      "password": "$argon2id$v=19$m=4096,t=3,p=1$OrcIcBYic8p8Dzng/gYY5w$glCYaS80Da47ll0odRKAAkBT/XGGTH8f+0ulEd2ExUY"
+    }
+  ],
+  "whispers": [
+    {
+      "id": "m02xapt15un",
+      "userName": "JulienT",
+      "message": "Hello hello ;)!!!",
+      "createdAt": "2025-04-10T10:42:30.834Z",
+      "updatedAt": "2025-04-10T10:42:30.834Z"
+    },
+    {
+      "id": "k4nuehrxzh",
+      "userName": "Sherlock Holmes",
+      "message": "C'est ce qu'on va voir...",
+      "createdAt": "2025-04-10T10:42:18.139Z",
+      "updatedAt": "2025-04-10T10:42:18.139Z"
+    },
+    {
+      "id": "wohhvkwv1fp",
+      "userName": "Le whisper fou",
+      "message": "Vous ne m'attraperez jamais !!!",
+      "createdAt": "2025-04-10T10:42:03.682Z",
+      "updatedAt": "2025-04-10T10:42:03.682Z"
     }
   ]
 }

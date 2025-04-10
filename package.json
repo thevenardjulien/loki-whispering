@@ -15,7 +15,8 @@
   "dependencies": {
     "argon2": "^0.41.1",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

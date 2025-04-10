@@ -2,4 +2,13 @@
   <a href="/">Home</a>
   <a href="/about">About</a>
   <a href="/users">Users</a>
+  <a href="/whispers">Whispers</a>
+
+  <% if (locals.isAuthenticated) { %>
+    <a href="/users/logout">Logout</a>
+    <span>Bonjour <%= locals.user?.id %></span>
+  <% } else { %>
+    <a href="/users/register">Register</a>
+    <a href="/users/login">Login</a>
+  <% } %>
 </nav>

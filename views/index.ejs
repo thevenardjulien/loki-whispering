@@ -9,6 +9,27 @@
       <section class="flex flex-col items-center justify-center">
         <h1 class="text-4xl font-bold mb-10">Welcome to Whispering!</h1>
       </section>
+      <section>
+        <a href="/whispers/new">
+          <button class="bg-violet-900 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded">
+            Add New Whisper
+          </button>
+        </a>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold mb-10 text-center">Last Whispers</h2>
+        <div class="flex flex-col justify-center items-center gap-10 min-w-[500px]">
+          <% whispers.forEach((whisper) => { %>
+          <div class="flex flex-col border-1 border-violet-900 rounded-md p-4 gap-4 w-full">
+            <p class="text-lg"><%= whisper.message %></p>
+            <div class="flex gap-4 items-center my-4">
+              <p class="text-xl font-semibold text-violet-900 flex justify-center items-center"><%= whisper.userName %></p>
+              <p><%= new Date(whisper.createdAt).toLocaleString() %></p>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </section>
     </main>
   </body>
 </html>
