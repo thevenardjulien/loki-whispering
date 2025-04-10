@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node --env-file=.env.development index.js",
     "dev:watch": "nodemon --exec \"node --env-file=.env.development\" index.js",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",
     "start": "node --env-file=.env.production index.js"
   },
   "dependencies": {

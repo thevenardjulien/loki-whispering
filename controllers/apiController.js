@@ -6,7 +6,7 @@ import { __dirname } from "../index.js";
 export const getWhispers = (req, res) => {
   const whispers = bdd.whispers;
   if (whispers && whispers.length > 0) {
-    res.send(whispers);
+    res.status(200).send(whispers);
   } else {
     res.status(404).send("Not found");
   }
@@ -16,7 +16,7 @@ export const getOneWhisper = (req, res) => {
   const { id } = req.params;
   const whisper = bdd.whispers.find((w) => w.id === id);
   if (whisper) {
-    res.send(whisper);
+    res.status(200).send(whisper);
   } else {
     res.status(404).send("Not found");
   }

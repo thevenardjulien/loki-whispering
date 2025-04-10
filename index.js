@@ -10,7 +10,7 @@ import apiRoute from "./routes/apiRoute.js";
 
 const require = createRequire(import.meta.url);
 const bdd = require("./bdd.json");
-const app = express();
+export const app = express();
 export const __dirname = dirname(fileURLToPath(import.meta.url)) + sep;
 
 // Configuration
