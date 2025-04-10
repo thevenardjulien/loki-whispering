@@ -6,6 +6,7 @@ import { createRequire } from "module";
 import { verifToken } from "./middlewares/verifToken.js";
 import userRoute from "./routes/usersRoute.js";
 import whisperRoute from "./routes/whispersRoute.js";
+import apiRoute from "./routes/apiRoute.js";
 
 const require = createRequire(import.meta.url);
 const bdd = require("./bdd.json");
@@ -62,6 +63,9 @@ app.get("/about", (req, res) => {
 
 app.use("/users", userRoute);
 app.use("/whispers", whisperRoute);
+
+// API
+app.use("/api", apiRoute);
 
 // Gestion des erreurs
 app.use((req, res) => {
